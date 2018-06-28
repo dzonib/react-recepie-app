@@ -1,25 +1,24 @@
 import React from 'react';
-import {TextField, Button, Grid} from '@material-ui/core'
+import { TextField, Button, FormControl} from '@material-ui/core';
 
-const Form = ({getRecipe}) => (
-  <Grid container alignContent="center">
-  <Grid item xs>
-  <form onSubmit={getRecipe} >
-    <TextField
-      name="recipe"
-      label="Find Recipes"
-      type="text"
-      margin="normal"
-        />  
-    <Button variant="extendedFab" size="medium">
+const Form = ({ getRecipe }) => (
+  <form onSubmit={getRecipe} style={{display: "flex", justifyContent: 'center'}}>
+    <FormControl>
+      <TextField
+        name="recipe"
+        label="Search For Recipes"
+        type="text"
+        margin="normal"
+      />
+      <Button
+        style={{ backgroundColor: '#00897B', color: 'white' }}
+        type="submit"
+        variant="outlined"
+      >
         Find Recipes
       </Button>
+    </FormControl>
   </form>
-  </Grid>
-  </Grid>
-)
-  
+);
 
-
-
-export default Form
+export default Form;

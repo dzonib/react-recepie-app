@@ -14,7 +14,7 @@ class App extends Component {
 
   getRecipe = async (e) => {
     e.preventDefault()
-    console.log()
+    console.log(this.state.recipes)
 
     const recipeName = e.target.elements.recipe.value;
     const data = await (await fetch(`https://cors-anywhere.herokuapp.com/http://food2fork.com/api/search?key=${API_KEY}&q=${recipeName}&count=10`)).json()
